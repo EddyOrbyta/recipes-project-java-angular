@@ -1,0 +1,26 @@
+<div>
+    <h2>Le ricette con valutazione migliore</h2>
+    <div class="ricette-container">
+        <div *ngFor="let ricettaWithScore of ricette" class="card mb-3 h-100">
+            <div class="row g-0 h-100">
+                <div class="col-md-4">
+                    <img src="{{ ricettaWithScore.ricetta.foto }}" class="img-fluid rounded-start h-100" alt="{{ ricettaWithScore.ricetta.nome }}">
+                </div>
+                <div class="col-md-8 d-flex flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ricettaWithScore.ricetta.nome }}</h5>
+                        <p class="card-text">
+                            <span *ngFor="let star of getStarsArray(ricettaWithScore.score)" class="star">&#9733;</span>
+                            <span *ngFor="let star of getEmptyStarsArray(ricettaWithScore.score)" class="star">&#9734;</span>
+                        </p>
+                        <p class="card-text">
+                            <mat-icon>alarm</mat-icon> {{ ricettaWithScore.ricetta.tempoPreparazione }} minuti
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        

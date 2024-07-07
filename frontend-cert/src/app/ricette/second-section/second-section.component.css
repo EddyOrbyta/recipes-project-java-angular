@@ -1,0 +1,28 @@
+div h2 {
+    padding: 1.5rem;
+}
+
+.ricette-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.card {
+    flex-shrink: 0;
+    height: 320px;
+    max-width: 550px;
+}
+
+.star {
+    color: gold;
+    font-size: 1.5em;
+}
+
+/* Media query for smartphones */
+@media (max-width: 768px) {
+    .card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}

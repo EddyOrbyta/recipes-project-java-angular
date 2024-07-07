@@ -1,0 +1,81 @@
+<div class="filter-section">
+    <h2>Ricerca tramite filtri</h2>
+    <p>
+      Scegli uno o più filtri per effettuare una ricerca rapida su numerose ricette.
+    </p>
+    <form (ngSubmit)="onFilterSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="difficolta">Difficoltà</label>
+            <select id="difficolta" [(ngModel)]="filters.difficolta" name="difficolta" class="form-control">
+              <option value="">Seleziona</option>
+              <option *ngFor="let diff of difficoltaOptions" [value]="diff">{{ diff }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <select id="tipo" [(ngModel)]="filters.tipo" name="tipo" class="form-control">
+              <option value="">Seleziona</option>
+              <option *ngFor="let tipo of tipoOptions" [value]="tipo">{{ tipo }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="visualizzazioni">Visualizzazioni</label>
+            <input type="number" id="visualizzazioni" [(ngModel)]="filters.visualizzazioni" name="visualizzazioni" class="form-control" min="0">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" [(ngModel)]="filters.categoria" name="categoria" class="form-control">
+              <option value="">Seleziona</option>
+              <option *ngFor="let cat of categoriaOptions" [value]="cat">{{ cat }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Rating</label>
+            <div class="rating-options">
+              <ng-container *ngFor="let rating of ratingOptions">
+                <input type="radio" [(ngModel)]="filters.rating" name="rating" [value]="rating" [id]="'rating' + rating">
+                <label [for]="'rating' + rating">{{ rating }}</label>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Numero di Persone</label>
+            <div class="num-persone-options">
+              <ng-container *ngFor="let num of numPersoneOptions">
+                <input type="checkbox" [(ngModel)]="filters.numPersone" (change)="onNumPersoneChange($event, num)" [checked]="filters.numPersone.includes(num)" [id]="'numPersone' + num">
+                <label [for]="'numPersone' + num"> {{ num }} </label>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="tempoPreparazione">Tempo di Preparazione (minuti)</label>
+            <input type="number" id="tempoPreparazione" [(ngModel)]="filters.tempoPreparazione" name="tempoPreparazione" class="form-control" min="1">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Cerca</button>
+    </form>
+  </div>
+  
+
+  <!-- Add here found ricette based on filter -->

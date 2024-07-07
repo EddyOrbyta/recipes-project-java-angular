@@ -1,0 +1,26 @@
+ESERCIZIO 1:
+Il ristoratore Giorgio Barchiesi (Giorgione per gli amici) vuole spopolare con la sua nuova app di cucina.
+L'app permette a Giorgione di inserire ingredienti e ricette da poter poi far vedere ai suoi fan.
+Una ricetta è formata da un insieme di ingredienti e da un insieme di passi atti alla preparazione del piatto.
+
+creazione di un db con le seguenti caratteristiche ed utilizzare le best practice, nomenclatura eccetera per il db utilizzato (es Oracle: tutto minuscolo, ecc -> leggere sul webbe):
+
+ingrediente
+ricetta
+passo
+
+creazione di un progetto Springboot che permetta(anche qui best practice di Java/Springboot):
+lettura, scrittura, modifica, cancellazione ingrediente
+lettura, scrittura, modifica, cancellazione ricetta
+
+ESERCIZIO 2:
+Solo gli utenti registrati possono vedere le ricette che Giorgione carica nel portale (ruolo FAN). 
+Solo Giorgione può caricare le ricette da far vedere ai propri fan (ruolo ADMIN).
+
+Implementare il comportamento scritto sopra tramite la sicurezza di Springboot.
+
+ESERCIZIO 3:
+creazione di una vista angular che permetta:
+login signin dell'utente
+possibilita di lettura, scrittura, modifica, cancellazione delle ricette/ingredienti per gli ADMIN
+possibilita di lettura delle ricette per i FAN

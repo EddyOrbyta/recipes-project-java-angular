@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" (click)="navigateHome()">App del Giorgione</a>
+ 
+ 
+  <div class="ml-auto d-flex align-items-center">
+    <div class="search-container">
+      <input type="text" placeholder="Cerca ricette" name="search" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()">
+      <mat-icon (click)="onSearch()">search</mat-icon>
+    </div>
+  </div>
+   
+
+  <!-- Toggler for collapsed navbar -->
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarText">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <!-- Collapsible content -->
+   <div class="collapse navbar-collapse" [ngClass]="{ 'show': !isCollapsed }" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateHome()">Home</a>
+      </li>
+      <li class="nav-item" *ngIf="isAdmin()">
+        <a class="nav-link" (click)="navigateAddRicetta()">Crea ricetta</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateAllRicetta()">Ricette</a>
+      </li>
+      <li class="nav-item" *ngIf="isAdmin()">
+        <a class="nav-link" (click)="navigateAddIngrediente()">Ingredienti</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateRistorante()">Ristorante</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateSocial()">Social</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateShop()">Shop</a>
+      </li>
+      <li class="nav-item" *ngIf="!isAdmin() && !isFan()">
+        <a class="nav-link" (click)="accedi()">Accedi</a>
+      </li>
+    </ul>
+  </div>
+  
+</nav>

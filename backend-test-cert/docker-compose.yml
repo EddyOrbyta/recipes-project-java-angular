@@ -1,0 +1,30 @@
+version: '3.8'
+
+volumes:
+  mysql_data:
+    driver: local
+  wso2_data:
+    driver: local
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ricette
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: password
+    ports:
+      - '3306:3306'
+    restart: always # Adding restart policy
+
+  wso2is:
+    image: wso2/wso2is:7.0.0
+    volumes:
+      - wso2_data:/var/lib/wso2
+    ports:
+      - '9443:9443'
+    restart: always # Adding restart policy

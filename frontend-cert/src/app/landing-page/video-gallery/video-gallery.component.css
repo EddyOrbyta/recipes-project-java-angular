@@ -1,0 +1,11 @@
+.carosello-container {
+    margin-top: 54px;
+    height: calc(100vh - 110px); 
+
+  }
+  
+  .carousel-image {
+    object-fit: cover; /* Scalare l'immagine per coprire tutto il container */
+    height: calc(100vh - 110px); 
+
+  }

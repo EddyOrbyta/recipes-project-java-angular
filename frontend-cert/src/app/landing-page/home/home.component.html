@@ -1,0 +1,49 @@
+<section>
+  <h3 class="mx-2">Le ricette più cliccate</h3>
+
+  <div class="row mx-2">
+    <div 
+      *ngFor="let ricetta of ricette; let i = index" 
+      [ngClass]="{ 'col-md-12': i % 4 === 0, 'col-md-6': i % 4 !== 0 }" 
+      class="mb-4 d-flex align-items-stretch"
+    >
+      <div class="card mb-3 h-100">
+        <div class="row g-0 h-100">
+          <div class="col-md-4">
+            <img src="{{ ricetta.foto }}" class="img-fluid rounded-start h-100" alt="{{ ricetta.nome }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body d-flex flex-column">
+              <div class="difficolta" [ngStyle]="{ 'color': getDifficoltaColor(ricetta.difficolta), 'font-size': '1rem', 'font-weight': 'bold', 'border-color' : getDifficoltaColor(ricetta.difficolta) }">
+                <p class="card-text">Difficoltà: {{ ricetta.difficolta }}</p>
+                <progress [value]="getValueBasedOnDifficolta(ricetta.difficolta)" max="100" [style.background-color]="getDifficoltaColor(ricetta.difficolta)"></progress>
+              </div>
+              <h5 class="card-title">{{ ricetta.nome }}</h5>
+              <p class="card-text">{{ ricetta.descrizione | slice:0:400 }}{{ ricetta.descrizione.length > 400 ? '...' : '' }}</p>
+              <p class="card-text">
+                <mat-icon>alarm</mat-icon> {{ ricetta.tempoPreparazione }} minuti
+              </p>
+              <div class="mt-auto">
+                <button class="btn btn-danger mt-auto" (click)="viewRecipeDetails(ricetta)">Prepara la ricetta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation example" style="margin-bottom: 15vh;">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" tabindex="-1" (click)="handlePreviousClick()">Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let page of totalPagesArray">
+        <a class="page-link" (click)="handlePageClick(page)">{{ page + 1 }}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="handleNextClick()">Next</a>
+      </li>
+    </ul>
+  </nav>
+</section>

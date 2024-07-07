@@ -1,0 +1,43 @@
+/* General styles for the navbar */
+nav {
+  padding-left: 2rem;
+  background-color: rgb(197, 153, 95);
+}
+
+.navbarText {
+  width: 100%;
+  padding: 5px;
+}
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: #02101f24;
+  border-radius: 3px;
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item .nav-link.active {
+  background-color: #02101f24;
+  border-radius: 3px;
+}
+
+
+
+/* Styles for the search container */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  margin-left: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  width: 100%;
+  max-width: 300px; 
+}
+
+.search-container mat-icon {
+  cursor: pointer;
+  padding-left: 5px;
+}

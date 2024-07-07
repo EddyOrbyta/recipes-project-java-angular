@@ -1,0 +1,11 @@
+<div class="carosello-container">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let image of images">
+        <img [src]="image.picture" [alt]="image.random" class=" w-100 carousel-image">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ image.random }}</h5>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  

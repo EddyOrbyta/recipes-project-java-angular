@@ -1,0 +1,32 @@
+<div class="easy-container">
+    <h2>Ricette facili e veloci</h2>
+  
+    <div class="row mx-2">
+      <div 
+        *ngFor="let ricetta of ricette; let i = index" 
+        [ngClass]="{ 'col-md-12': i % 6 === 0, 'col-md-6': i % 6 !== 0 }" 
+        class="mb-4 d-flex align-items-stretch"
+      >
+        <div class="card mb-3 h-100">
+          <div class="row g-0 h-100">
+            <div class="col-md-4">
+              <img src="{{ ricetta.foto }}" class="img-fluid rounded-start h-100" alt="{{ ricetta.nome }}">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ ricetta.nome }}</h5>
+                <p class="card-text">{{ ricetta.descrizione | slice:0:400 }}{{ ricetta.descrizione.length > 400 ? '...' : '' }}</p>
+                <p class="card-text">
+                  <mat-icon>alarm</mat-icon> {{ ricetta.tempoPreparazione }} minuti
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-danger mt-auto" (click)="viewRecipeDetails(ricetta)">Prepara la ricetta</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>  
+  
