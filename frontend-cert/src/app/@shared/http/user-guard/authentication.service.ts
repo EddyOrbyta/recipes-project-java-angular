@@ -5,11 +5,17 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  
+  public isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
-  isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
+  constructor() {
+    this.loadInitialAuthenticationStatus();
+  }
 
-  constructor() {}
+  private loadInitialAuthenticationStatus(): void {
+    const userSession = localStorage.getItem('userSession');
+    this.isAuthenticatedSubject.next(!!userSession);
+  }
 
   updateAuthenticationStatus(isAuthenticated: boolean) {
     this.isAuthenticatedSubject.next(isAuthenticated);

@@ -26,7 +26,6 @@ import { LoginDialogComponent } from './login-dialog.component';
   imports: [
     CommonModule,
     RouterModule,
-    BrowserAnimationsModule,
     ShellRoutingModule,
     NgbModule,
     MatIconModule,

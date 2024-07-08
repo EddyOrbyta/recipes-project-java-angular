@@ -58,7 +58,7 @@
             <label>Numero di Persone</label>
             <div class="num-persone-options">
               <ng-container *ngFor="let num of numPersoneOptions">
-                <input type="checkbox" [(ngModel)]="filters.numPersone" (change)="onNumPersoneChange($event, num)" [checked]="filters.numPersone.includes(num)" [id]="'numPersone' + num">
+                <input type="checkbox" [(ngModel)]="filters.numPersone" (change)="onNumPersoneChange($event, num)" [checked]="filters.numPersone?.includes(num) ?? false" [id]="'numPersone' + num">
                 <label [for]="'numPersone' + num"> {{ num }} </label>
               </ng-container>
             </div>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Cerca</button>
+      <button (click)="sendRequest()" class="btn btn-primary mt-3">Cerca</button>
     </form>
   </div>
   

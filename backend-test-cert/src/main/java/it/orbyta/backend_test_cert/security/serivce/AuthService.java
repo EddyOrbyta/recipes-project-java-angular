@@ -59,7 +59,7 @@ public class AuthService {
 
         Claims claims = Jwts.parser()
                 .setSigningKey(SECRET_KEY)
-                .parseClaimsJws(getToken(token))
+                .parseClaimsJws(token)
                 .getBody();
 
         return claims.getSubject();
@@ -69,7 +69,7 @@ public class AuthService {
         log.info("Start method getRole for token {}", token);
         Claims claims = Jwts.parser()
                 .setSigningKey(SECRET_KEY)
-                .parseClaimsJws(getToken(token))
+                .parseClaimsJws(token)
                 .getBody();
 
         return UserRole.valueOf((String) claims.get("role"));

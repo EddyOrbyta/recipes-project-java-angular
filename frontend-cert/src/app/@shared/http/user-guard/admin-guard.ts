@@ -16,6 +16,7 @@ import { LoginDialogComponent } from "../../../shell/login-dialog.component";
     ): boolean {
       console.info('CanActivate called');
       const role: string = this.userService.getRole();
+      console.log(role)
       if (role == Role.Admin) {
         return true;
       } else {

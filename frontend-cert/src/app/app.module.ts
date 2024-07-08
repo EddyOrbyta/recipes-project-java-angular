@@ -16,6 +16,9 @@ import { ShopModule } from './shop/shop.module';
 import { RistoranteModule } from './ristorante/ristorante.module';
 import { SocialModule } from './social/social.module';
 import { RicetteModule } from './ricette/ricette.module';
+import { AuthenticationService } from './@shared/http/user-guard/authentication.service';
+import { UserGuard } from './@shared/http/user-guard/user-guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +38,11 @@ import { RicetteModule } from './ricette/ricette.module';
     NgbModule,
   ],
   providers: [
+    UserGuard,
     AdminGuard, 
     FanGuard,
     UserService,
+    
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptorService,

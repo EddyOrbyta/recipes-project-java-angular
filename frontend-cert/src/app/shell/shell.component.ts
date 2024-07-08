@@ -18,7 +18,7 @@ export class ShellComponent implements OnInit {
   
 
   ngOnInit() {
-    this.authService.isAuthenticated$.subscribe((isAuthenticated) => {
+    this.authService.isAuthenticatedSubject.subscribe((isAuthenticated) => {
       this.allowNavigation = isAuthenticated;
     });
   }

@@ -65,7 +65,7 @@ export class FilterSectionComponent implements OnInit {
       this.filters.numPersone = this.filters.numPersone.filter((n: number) => n !== num);
     }
   }
-  
+  sendRequest(): void {}
 
   getStarsArray(score: number): number[] {
     const fullStars = Math.floor(score);

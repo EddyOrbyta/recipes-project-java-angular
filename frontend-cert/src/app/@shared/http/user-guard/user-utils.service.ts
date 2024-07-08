@@ -25,11 +25,7 @@ export class UserService {
     return this.userData?.role || '';
   }
   getName(): string {
-    return this.userData?.name || '';
-  }
-
-  getSurname(): string {
-    return this.userData?.surname || '';
+    return this.userData?.username || '';
   }
 
   getToken(): string {

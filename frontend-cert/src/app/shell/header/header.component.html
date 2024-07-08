@@ -8,10 +8,9 @@
       <mat-icon (click)="onSearch()">search</mat-icon>
     </div>
   </div>
-   
 
   <!-- Toggler for collapsed navbar -->
-  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarText">
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarText">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -39,8 +38,11 @@
       <li class="nav-item">
         <a class="nav-link" (click)="navigateShop()">Shop</a>
       </li>
-      <li class="nav-item" *ngIf="!isAdmin() && !isFan()">
+      <li class="nav-item" *ngIf="!isAuthenticate()">
         <a class="nav-link" (click)="accedi()">Accedi</a>
+      </li>
+      <li class="nav-item" *ngIf="isAuthenticate()">
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>

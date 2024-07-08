@@ -27,8 +27,8 @@ public class RicettaController {
 
     @PostMapping(RicettaApiConsts.ADD_RICETTA)
     public ResponseEntity<String> addRicetta(@RequestBody RicettaRequest ricettaReq, @RequestHeader(value = "Authorization") String jwt) {
-
-        String userUid = authService.getUsername(jwt);
+        String token = authService.getToken(jwt);
+        String userUid = authService.getUsername(token);
 
         log.info("Start method - addRicetta - ricettaReq: {}, userUid: {}", ricettaReq, userUid);
 

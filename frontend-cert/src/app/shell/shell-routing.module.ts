@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShellComponent } from './shell.component';
 import { FanGuard } from '../@shared/http/user-guard/fan-guard';
 import { AdminGuard } from '../@shared/http/user-guard/admin-guard';
-
+import { UserGuard } from '../@shared/http/user-guard/user-guard';
 const routes: Routes = [
   {
     path: '',
@@ -15,7 +15,7 @@ const routes: Routes = [
       }, 
       {
         path: 'ricette',
-        loadChildren: () => import('../ricette/ricette.module').then(m => m.RicetteModule) , canActivate: [FanGuard, AdminGuard]
+        loadChildren: () => import('../ricette/ricette.module').then(m => m.RicetteModule) , canActivate: [UserGuard]
       },
       {
         path: 'shop',

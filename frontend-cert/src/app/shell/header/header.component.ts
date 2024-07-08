@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { UserService } from '../../@shared/http/user-guard/user-utils.service';
 import { Router } from '@angular/router';
 import { Role } from '../../@shared/http/user-guard/role-enum';
@@ -10,7 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
   userRole: string = '';
   searchQuery: string = '';
   isCollapsed = true;
@@ -23,8 +23,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.role = this.userService.getRole();
+    
   }
+  //for testing pourpose
+  toggleNavbar() {
+    console.log('Current isCollapsed value:', this.isCollapsed);
 
+    this.isCollapsed = !this.isCollapsed;
+    
+    console.log('Updated isCollapsed value:', this.isCollapsed);
+  }
+  
+  public isAuthenticate(){
+    return this.role === Role.Admin || this.role === Role.Fan;
+  }
   public navigateHome() {
       this.router.navigate(['']);
   }
@@ -60,7 +72,11 @@ export class HeaderComponent implements OnInit {
     return this.role === Role.Fan;
   }
   public accedi(){
-    this.router.navigate(['login']);
+    this.router.navigate(['authorization']);
+  }
+  public logout(){
+    localStorage.clear();
+    this.router.navigate([''])
   }
 
   public onSearch() {
