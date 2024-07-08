@@ -1,0 +1,5 @@
+
+¦	java:S116"_Rename this field "AUTH_WHITE_LIST_AUTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ØÍ—ÿÿÿÿÿ8Ô¬¾‰2J$f125bee9-654d-42b9-afab-51bc2c4c8d78
+¢	java:S116"`Rename this field "AUTH_WHITE_LIST_ADMIN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔèŒû8Õ¬¾‰2J$1bace4f8-ab73-46d2-ab45-2cd6e612405b
+
+java:S1128"ERemove this unused import 'org.springframework.http.HttpMethod.POST'.(ÛÈ—šùÿÿÿÿ8¸Â¾‰2J$bc165d04-09cc-4466-bdb2-28c8f1ffe489

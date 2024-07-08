@@ -1,0 +1,25 @@
+
+œ	java:S116"URename this field "SECRET_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·÷İÈÿÿÿÿÿ8œ—ÖÔˆ2J$d066bd57-eec5-41a5-b212-d1e168583902
+¡	java:S116"ZRename this field "EXPIRATION_TIME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àıäşÿÿÿÿ8œ—ÖÔˆ2J$4a94c9a7-3f94-4dff-b30c-f2bb9e31f96e
+i
+java:S1170"!Make this final field static too.(·÷İÈÿÿÿÿÿ8œ—ÖÔˆ2J$597523d2-971c-4992-8178-942e13f5cc1f
+i
+java:S1170"!Make this final field static too.(Àıäşÿÿÿÿ8œ—ÖÔˆ2J$206d86ba-a016-44e4-9367-6178a39b4481
+y
+java:S6437-"6Revoke and change this password, as it is compromised.(ÄŞ¼ë8®—ÖÔˆ2J$e917dc59-ea92-41d2-bbe6-b863cd263ff2
+q
+java:S1874-".Remove this use of "parser"; it is deprecated.(ÄŞ¼ë8¯—ÖÔˆ2J$f65f0897-3a91-4541-90fb-bffb860e8f6e
+x
+java:S1874-"5Remove this use of "setSigningKey"; it is deprecated.(ÄŞ¼ë8¯—ÖÔˆ2J$c3b46c0b-1784-41ad-818d-a8f0d756bafc
+y
+java:S6437="6Revoke and change this password, as it is compromised.(ÑƒÅÙ8³—ÖÔˆ2J$3389a9bb-1373-4a84-97c6-11ee387e20df
+q
+java:S1874<".Remove this use of "parser"; it is deprecated.(¤‹ıà8´—ÖÔˆ2J$3c0cc67a-d1ff-49f2-8137-10d00372cb04
+x
+java:S1874="5Remove this use of "setSigningKey"; it is deprecated.(ÑƒÅÙ8´—ÖÔˆ2J$8baa3b32-7fa3-4ca0-94c0-bff803aed15c
+y
+java:S6437G"6Revoke and change this password, as it is compromised.(ÑƒÅÙ8·—ÖÔˆ2J$f9d7be48-169a-4f59-9a12-bd504c74db08
+q
+java:S1874F".Remove this use of "parser"; it is deprecated.(¤‹ıà8·—ÖÔˆ2J$71689ba0-3301-4c3c-a97d-6c3da8741229
+x
+java:S1874G"5Remove this use of "setSigningKey"; it is deprecated.(ÑƒÅÙ8·—ÖÔˆ2J$cc7958b9-e24b-4d46-8a9f-cb0031d54b9b
