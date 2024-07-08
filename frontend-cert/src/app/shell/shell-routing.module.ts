@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShellComponent } from './shell.component';
+import { FanGuard } from '../@shared/http/user-guard/fan-guard';
+import { AdminGuard } from '../@shared/http/user-guard/admin-guard';
 
 const routes: Routes = [
   {
@@ -13,7 +15,7 @@ const routes: Routes = [
       }, 
       {
         path: 'ricette',
-        loadChildren: () => import('../ricette/ricette.module').then(m => m.RicetteModule)
+        loadChildren: () => import('../ricette/ricette.module').then(m => m.RicetteModule) , canActivate: [FanGuard, AdminGuard]
       },
       {
         path: 'shop',
@@ -26,6 +28,10 @@ const routes: Routes = [
       {
         path: 'ristorante',
         loadChildren: () => import('../ristorante/ristorante.module').then(m => m.RistoranteModule)
+      },
+      {
+        path: 'authorization',
+        loadChildren: () => import('../authorization/auth.module').then(m => m.AuthorizationModule)
       },
     ]
   }

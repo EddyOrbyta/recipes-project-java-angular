@@ -1,44 +1,43 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCommonModule } from '@angular/material/core';
 
+import { ShellRoutingModule } from './shell-routing.module';
 import { ShellComponent } from './shell.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ShellRoutingModule } from './shell-routing.module';
-import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { LoginDialogComponent } from './login-dialog.component';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    // Altri moduli
+  declarations: [
+    HeaderComponent,
+    ShellComponent,
+    FooterComponent,
+    LoginDialogComponent
   ],
-  // Altri metadati del modulo
-})
-export class AppModule { }
-
-@NgModule({ 
-    declarations: [
-        HeaderComponent, 
-        ShellComponent,
-        FooterComponent
-        
-    ],
-    imports: [ 
-    BrowserAnimationsModule,
-    RouterModule, 
-    ShellRoutingModule,
+  imports: [
     CommonModule,
-    MatIconModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    ShellRoutingModule,
     NgbModule,
-    FormsModule
-    ],
-    exports: [
-        ShellComponent
-      ]
- 
+    MatIconModule,
+    FormsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCommonModule
+  ],
+  exports: [
+    ShellComponent
+  ],
 })
-export class ShellModule {}
+export class ShellModule { }

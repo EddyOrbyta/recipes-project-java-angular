@@ -21,8 +21,12 @@ public class WebSecurityConfiguration {
 
     private final AuthService authService;
     private final String[] AUTH_WHITE_LIST_AUTH = {
-            AuthApiConstants.BASE_PATH + "/**"
+            AuthApiConstants.BASE_PATH + "/**",
+            RicettaApiConsts.BASE_URL + RicettaApiConsts.GET_ALL_RICETTE,
+            RicettaApiConsts.BASE_URL + RicettaApiConsts.GET_RICETTE_EASY,
+            RicettaApiConsts.BASE_URL + RicettaApiConsts.GET_RICETTE_5_STAR,
     };
+
     private final String[] AUTH_WHITE_LIST_ADMIN = {
             RicettaApiConsts.BASE_URL + RicettaApiConsts.ADD_RICETTA,
             RicettaApiConsts.BASE_URL + RicettaApiConsts.REMOVE_RICETTA,
@@ -37,7 +41,7 @@ public class WebSecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests (authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers(POST, AUTH_WHITE_LIST_AUTH).permitAll()
+                                .requestMatchers(AUTH_WHITE_LIST_AUTH).permitAll()
 
                                 .requestMatchers(AUTH_WHITE_LIST_ADMIN).hasAuthority(UserRole.ADMIN.name())
                                 .anyRequest().authenticated()

@@ -70,7 +70,7 @@ public class RicettaController {
                                                                        @RequestParam(defaultValue = "createdAt") String sortBy,
                                                                        @RequestParam(defaultValue = "true") boolean asc,
                                                                        @RequestParam(required = false) String ricettaFilter) throws IllegalArgumentExceptionForPagination {
-        String userId = "Giorgione";
+        String userId = "Giorgione-Admin";
 
         if (page < 0 && size < 1) {
             throw new IllegalArgumentExceptionForPagination("Invalid page : " + page + " or size " + size);
@@ -96,7 +96,7 @@ public class RicettaController {
                                                                            @RequestParam(defaultValue = "createdAt") String sortBy,
                                                                            @RequestParam(defaultValue = "true") boolean asc,
                                                                            @RequestParam(required = false) String ricettaFilter, String userId) throws IllegalArgumentExceptionForPagination {
-        userId = "Giorgione";
+        userId = "Giorgione-Admin";
 
         if (page < 0 && size < 1) {
             throw new IllegalArgumentExceptionForPagination("Invalid page : " + page + " or size " + size);

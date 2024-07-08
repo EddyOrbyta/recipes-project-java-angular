@@ -11,11 +11,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RicettaNotFoundException.class)
     public ResponseEntity<String> handleRicettaNotFoundException(RicettaNotFoundException ex) {
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
     @ExceptionHandler(IngredienteNotFoundException.class)
     public ResponseEntity<String> handleIngredienteNotFoundException(IngredienteNotFoundException ex) {
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.badRequest().body(ex.getMessage());
+
     }
 
     @ExceptionHandler(UserAlreadyExistException.class)
